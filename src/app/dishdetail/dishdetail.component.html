@@ -9,8 +9,8 @@
     >
 
   
-  <div fxFlex="40" *ngIf="dish">
-    <mat-card>
+  <div fxFlex="40">
+    <mat-card *ngIf="dish">
       <mat-card-header>
         <mat-card-title>
           <h3>{{dish.name | uppercase}}</h3>
