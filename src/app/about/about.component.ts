@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Leader } from '../shared/leader';
 import { LeaderService } from '../services/leader.service';
 
+
 @Component({
   selector: 'app-about',
   templateUrl: './about.component.html',
@@ -10,12 +11,12 @@ import { LeaderService } from '../services/leader.service';
 export class AboutComponent implements OnInit {
 
   leaders: Leader[];
+  leader: Leader;
 
   constructor(private leaderService: LeaderService) { }
 
-  ngOnInit() {
-    this.leaderService.getLeaders()
-      .subscribe(leaders => this.leaders = leaders);
+  ngOnInit(): void {
+    this.leaderService.getLeaders().subscribe(leaders => this.leaders = leaders);
   }
 
 }
